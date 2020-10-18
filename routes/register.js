@@ -31,7 +31,9 @@ const hashedPassword = await bcrypt.hash(req.body.password, salt);
          const savedUser = await user.save();
         res.send(savedUser);
     }catch(err){
-        res.status(400).send(err);
+        if (error.isJoi === true) error.status = 422
+        nameExist(error)
+        // res.status(400).send(err);
     }
    
 });
