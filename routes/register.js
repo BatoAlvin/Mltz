@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs')
 const User = require('../models/User')
+const {authSchema} = require("../helpers/validation_schema")
 
 
 router.post('/', async(req,res)=>{
@@ -24,6 +25,8 @@ const hashedPassword = await bcrypt.hash(req.body.password, salt);
         password:hashedPassword
     });
     try{
+        const result = await authSchema.validateAsync(req.body)
+        console.log(result)
         //Getting the user and saving
          const savedUser = await user.save();
         res.send(savedUser);
