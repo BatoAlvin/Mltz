@@ -30,6 +30,10 @@ app.use('/register',registerroutes);
 const loginrroutes = require('./routes/login');
 app.use('/login',loginrroutes);
 
+const homeroutes = require('./routes/home');
+app.use('/home',homeroutes);
+
+
 const questionroutes = require('./routes/question');
 app.use('/question',questionroutes);
 
