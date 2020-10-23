@@ -37,6 +37,8 @@ app.use('/home',homeroutes);
 const questionroutes = require('./routes/question');
 app.use('/question',questionroutes);
 
+const questionidroutes = require('./routes/question');
+app.use('/:questionid',questionidroutes);
 
 app.listen(port,()=>{
     console.log(`Server running`)
