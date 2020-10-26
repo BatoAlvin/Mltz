@@ -3,8 +3,8 @@ const User = require('../models/User')
 
 router.post('/', async(req,res)=>{
 
-    const emailExistt = await User.findOne({answer: req.body.answer});
-    if(emailExistt) return res.status(400).send('Answer already exists');
+    const emailExists = await User.findOne({answer: req.body.answer});
+    if(emailExists) return res.status(400).send('Answer already exists');
     
     
     //Create a new question
