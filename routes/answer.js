@@ -3,7 +3,7 @@ const User = require('../models/User')
 
 router.post('/', async(req,res)=>{
 
-    const emailExistt = await User.findOne({question: req.body.question});
+    const emailExistt = await User.findOne({question: req.body.answer});
     if(emailExistt) return res.status(400).send('Answer already exists');
     
     
