@@ -40,6 +40,12 @@ app.use('/question',questionroutes);
 const questionidroutes = require('./routes/question');
 app.use('/:questionid',questionidroutes);
 
+const answerroutes = require('./routes/answer');
+app.use('/answer',answerroutes);
+
+const answeridroutes = require('./routes/answer');
+app.use('/:answerid',answeridroutes);
+
 app.listen(port,()=>{
     console.log(`Server running`)
 });
