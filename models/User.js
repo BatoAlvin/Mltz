@@ -24,6 +24,9 @@ const userSchema = new mongoose.Schema({
     question: {
         type: String,
     },
+    answer: {
+        type: String,
+    },
 });
 
 

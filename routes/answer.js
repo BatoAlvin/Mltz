@@ -41,14 +41,14 @@ router.post('/', async(req,res)=>{
         }
         });
 
-        //Get specific question
-        router.get('/:answerid', async(req, res,) => {
-            try{
-               const post =  await User.findById({_id: req.params.answerid});
-               res.json(post);
-            } catch (err) {
-                res.status(500).send("Unable to save")
-            }
-            });
+        // //Get specific question
+        // router.get('/:answerid', async(req, res,) => {
+        //     try{
+        //        const post =  await User.findById({_id: req.params.answerid});
+        //        res.json(post);
+        //     } catch (err) {
+        //         res.status(500).send("Unable to save")
+        //     }
+        //     });
 
 module.exports = router ;
